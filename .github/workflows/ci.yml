@@ -1,6 +1,7 @@
 name: CI
 on:
-  pull_request:
+  - pull_request
+  - push
 
 jobs:
   build:
@@ -12,6 +13,8 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
+        with:
+          run_install: false
 
       - name: Install dependencies
         run: |
