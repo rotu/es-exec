@@ -34,9 +34,9 @@ jobs:
       - name: Update version
         id: version
         run: |
-          old=$(npm version)
-          new=$(npm version ${{ inputs.segment }} --no-git-tag-version)
-          pnpm -r exec "npm version ${new} --no-git-tag-version"
+          old=$(pnpm version)
+          new=$(pnpm version ${{ inputs.segment }} --no-git-tag-version)
+          pnpm -r exec "pnpm version ${new} --no-git-tag-version"
           git tag versions/${new}
           echo "old=${old}" >> "$GITHUB_OUTPUT"
           echo "new=${new}" >> "$GITHUB_OUTPUT"
