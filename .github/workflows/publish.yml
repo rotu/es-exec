@@ -5,16 +5,16 @@ on:
       segment:
         type: choice
         options:
-          - major
-          - minor
-          - patch
           - prerelease
+          - patch
+          - minor
+          - major
         required: true
       access:
         type: choice
         options:
-          - public
           - restricted
+          - public
         required: true
 jobs:
   increment-versions:
