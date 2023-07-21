@@ -28,7 +28,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pnpm env use --global 16
           pnpm install --frozen-lockfile
 
       - name: Update version
